@@ -1,0 +1,38 @@
+-- Initial job
+SELECT payment, SUM(sales)
+FROM purchases
+GROUP BY payment;
+
+-- Exercise 1
+SELECT category, SUM(sales)
+FROM purchases
+GROUP BY category;
+
+-- Exercise 2
+SELECT category, COUNT(*)
+FROM purchases
+GROUP BY category;
+
+-- Exercise 3
+-- Malformed rows are rejected before processing.
+-- SQL equivalent: only load/use rows with exactly 6 fields.
+
+-- Exercise 4
+SELECT category, SUM(sales)
+FROM purchases
+WHERE category IN ('Computers', 'Cameras', 'Video Games')
+GROUP BY category;
+
+-- Exercise 5
+SELECT category, COUNT(*)
+FROM purchases
+WHERE category IN ('Computers', 'Cameras', 'Video Games')
+GROUP BY category
+HAVING COUNT(*) > 114;
+
+-- Exercise 6
+SELECT category, AVG(sales)
+FROM purchases
+WHERE category IN ('Computers', 'Cameras', 'Video Games')
+GROUP BY category;
+
