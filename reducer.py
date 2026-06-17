@@ -12,10 +12,10 @@ for line in sys.stdin:
     if current_key == key:
         current_count += 1
     else:
-        if current_key:
+        if current_key and current_count > 114:
             sys.stdout.write("{0}\t{1}\n".format(current_key, current_count))
         current_key = key
         current_count = 1
 
-if current_key:
+if current_key and current_count > 114:
     sys.stdout.write("{0}\t{1}\n".format(current_key, current_count))
